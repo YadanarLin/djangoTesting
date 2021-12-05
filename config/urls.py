@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from apiTest import views as apiTest_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,6 +26,6 @@ urlpatterns = [
      #call index function in the apiTest_views
     path('line_bot/',include('line_bot.urls')),
     url(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$',serve,{'document_root':settings.STATICROOT}),
+    url(r'^static/(?P<path>.*)$',serve,{'document_root':settings.STATIC_ROOT}),
 
 ]
