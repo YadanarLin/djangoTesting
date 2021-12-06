@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
@@ -10,10 +9,11 @@ from line_bot.line_message import lineMessage
 def index(request):
     if request.method=='POST':
         request = json.loads(request.body.decode('utf-8'))
-        data=request['events'][0]
-        message=data['message']
-        reply_token=data['replyToken']
-        line_message=lineMessage(message_creator.create_single_text_message(message['text']))
-        line_message.reply(reply_token)
-    return HttpResponse('ok')
+        events=request['events']
+        for event in events:
+            message=event['message']
+            reply_token=event['replyToken']
+            line_message=lineMessage(message_creator.create_single_text_message(message['text']))
+            line_message.reply(reply_token)
+        return HttpResponse('ok')
 
