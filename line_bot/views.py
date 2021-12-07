@@ -17,3 +17,4 @@ def index(request):
             line_message.reply(reply_token)
         return HttpResponse('ok')
 
+    return("error")
