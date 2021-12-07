@@ -10,6 +10,8 @@ HEADER={
     'Authorization': 'Bearer '+ACCESS_TOKEN
 }
 
+CHANNEL_SCRET='a70256da1e2c9d7681f922121eaf6c9a'
+
 class lineMessage():
     def __init__(self,messages):
         self.messages=messages
