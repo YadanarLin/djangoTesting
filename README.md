@@ -1,2 +1,2 @@
 # djangoTesting
- testing to create a line-bot
+creating a line-bot with django
