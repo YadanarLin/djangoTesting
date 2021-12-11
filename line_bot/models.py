@@ -10,7 +10,7 @@ class TrainInfo(models.Model):
     railway = models.CharField(max_length=500)
     operator = models.CharField(max_length=200)
     information = models.CharField(max_length=2000)
-
+   
     def update_train(self, data):
         self.train_id = data["@id"]
         # self.date = date_parsing(data["dc:date"])
